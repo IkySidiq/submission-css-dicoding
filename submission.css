@@ -184,7 +184,6 @@ html, body {
 .section1 {
   width: 75vw;
   height: 100%;
-  /* margin: 15px 10px 15px 15px; */
   border-radius: 20px;
   display: flex;
   flex-direction: column;
@@ -225,6 +224,7 @@ html, body {
   margin-top: -10px;
   display: flex;
   align-items: center;
+  justify-content: center;
   font-family: "Open Sans", sans-serif;
 }
 
@@ -273,7 +273,6 @@ html, body {
 
 .manual-navigation-wrapper {
   position: absolute;
-  /* border: 1px solid red; */
   height: 100%;
   width: 100%;
   display: flex;
@@ -320,8 +319,52 @@ html, body {
   background-color: #fead17;
 }
 
+.auto-navigation-wrapper {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.auto-navigation {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+}
+
+.copy {
+  padding: 7px;
+  height: 17px;
+  width: 17px;
+  margin: 0px 10.67px 9px 10.67px; /* Susah ngaturnya */
+  border-radius: 10px;
+  margin-top: 5px;
+  transition: 0.3s ease;
+}
+
+.slides #radio1:checked ~ .auto-navigation-wrapper .auto-navigation .auto-btn1 {
+  background-color: #fead17;
+}
+
+.slides #radio2:checked ~ .auto-navigation-wrapper .auto-navigation .auto-btn2 {
+  background-color: #fead17;
+}
+
+.slides #radio3:checked ~ .auto-navigation-wrapper .auto-navigation .auto-btn3 {
+  background-color: #fead17;
+}
+
+.slides #radio4:checked ~ .auto-navigation-wrapper .auto-navigation .auto-btn4 {
+  background-color: #fead17;
+}
+
 /* --------------------END OF MAIN-------------------- */
 
+/* --------------------START OF FOOTER-------------------- */
 .footer-container {
   height: 50vh;
 }
@@ -404,3 +447,5 @@ footer a:hover {
   height: 8px;
   width: 100%;
 }
+
+/* --------------------END OF FOOTER  -------------------- */

@@ -43,13 +43,14 @@
           <p>Dr. Vegapunk, the brilliant and enigmatic founder of the Super Science Group and a former top scientist of the World Government, is a Mobel Peace Prize-winning mind whose creations defy imagination — from making flowers bloom from gunpowder, to decoding the secrets of pyrobloin and climate manipulation, crafting synthetic seastone applications, attempting to replicate the mythical Fish-Fish Fruit, Model: Azure Dragon, and engineering the fearsome Pacifista: mass-produced, laser-equipped cyborgs modeled after Bartholomew Kuma — precursors to the even more terrifying Seraphim, a new generation of bio-engineered superweapons.</p>
         </article>
         <article class="article2">
-          <p>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores unde recusandae eaque reprehenderit dolorum. Quae a dolorem rem aliquid dolores?" ~Dr. Vegapunk</p>
+          <p>"Joy Boy is a revolutionary figure who wants to free the world from the grip of the World Government."
+            <br>~Dr. Vegapunk</p>
         </article>
       </section>
       <section class="section2">
         <div class="slider">
           <div class="slides">
-            <input type="radio" name="radio-btn" id="radio1">
+            <input type="radio" name="radio-btn" id="radio1" checked>
             <input type="radio" name="radio-btn" id="radio2">
             <input type="radio" name="radio-btn" id="radio3">
             <input type="radio" name="radio-btn" id="radio4">
@@ -64,6 +65,14 @@
             </div>
             <div class="slide">
               <img src="carousel/v5.jpg" alt="">
+            </div>
+            <div class="auto-navigation-wrapper">
+              <div class="auto-navigation">
+                <div class="copy auto-btn1"></div>
+                <div class="copy auto-btn2"></div>
+                <div class="copy auto-btn3"></div>
+                <div class="copy auto-btn4"></div>
+              </div>
             </div>
             <div class="manual-navigation-wrapper">
               <div class="manual-navigation">
@@ -86,7 +95,6 @@
         <a href="https://www.instagram.com/rizkysidiq/" target="_blank"><img src="socmed-logo/ig.png" alt=""></a>
         <a href="https://www.linkedin.com/in/rizky-purnama-sidiq-77265521b/" target="_blank"><img src="socmed-logo/in.png" alt=""></a>
       </div>
-
       <div class="tail-wrapper">
         <div class="about">
           <h4>ABOUT</h4>
@@ -107,16 +115,14 @@
           </ul>
         </div>
       </div>
-
       <div class="copyright">
-        <p  >© 2025 Rizky Purnama Sidiq, All Rights Reserved.<p>
+        <p>© 2025 Rizky Purnama Sidiq, All Rights Reserved.<p>
       </div>
-
       <div class="line"></div>
     </div>
   </footer>
 
-  <script>
+  <script> //DOM NAVBAR
     const navLinks = document.querySelectorAll(".nav li a");
     navLinks.forEach(item => {
       item.addEventListener("click", () => {
@@ -127,5 +133,34 @@
       })
     })
   </script>
+  <script> //DOM AUTO-CAROUSEL
+  document.addEventListener('DOMContentLoaded', function() {
+    let counter = 1;
+    let slideInterval;
+    const radioButtons = document.querySelectorAll('input[name="radio-btn"]');
+    const mainCarousel = () => {
+      document.getElementById("radio1").checked = true;
+      startInterval();
+      radioButtons.forEach(radio => {
+        radio.addEventListener('change', function() {
+          if (this.checked) {
+            clearInterval(slideInterval);
+            counter = parseInt(this.id.replace('radio', ''));
+            startInterval();
+          }
+        });
+      });
+    }
+    function startInterval() {
+      clearInterval(slideInterval);
+      slideInterval = setInterval(nextSlide, 3000);
+    }
+    function nextSlide() {
+      counter = (counter % 4) + 1;
+      document.getElementById("radio" + counter).checked = true;
+    }
+    mainCarousel();
+  });
+    </script>
 </body>
 </html>
