@@ -31,7 +31,7 @@ html, body {
 }
 
 .emblem img {
-  height: 100%;
+  height: 70px; /* Kalau ini dibuat 100%, maka saat melakukan media query pada saat mengganti height ini juga akan tetap 100% mengikuti induknya. Jadi tidak disarankan */
   display: flex;
   align-items: center;
   padding-top: 2.5px;
@@ -456,3 +456,150 @@ footer a:hover {
 }
 
 /* --------------------END OF FOOTER  -------------------- */
+
+/* -------------------- START OF MEDIA QUERY -------------------- */
+
+/* For tablets and smaller desktops (768px - 1024px) */
+@media screen and (max-width: 1024px) {
+  .slide img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .footer-container{
+    height: 40vh;
+  }
+
+  .main-container {
+    height: 110vh;
+  }
+
+  .article1 {
+    padding: 40px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    height: auto;
+    padding: 10px 0;
+  }
+
+  .emblem {
+    height: 60px;
+    margin-bottom: 10px;
+  }
+
+  .nav-container h1 {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    padding: 0 10px;
+  }
+  
+  .footer-container .tail-wrapper {
+    flex-direction: column;
+  }
+
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+
+  .section1 {
+    width: 100%;
+  }
+
+  .article1 {
+    height: auto;
+  }
+  
+  .article2 {
+    height: auto;
+    padding: 0 30px;
+  }
+
+  .section2 {
+    margin-bottom: 70px;
+    height: 100%;
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .nav-container{
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .nav-container .emblem {
+    height: auto;
+    margin-top: 15px;
+  }
+
+  .nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -13px;
+  }
+
+  .nav-container .nav li {
+    margin-top: 10px;
+  }
+
+  .nav-container h1 {
+    width: 50%;
+  }
+
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 160vh;
+  }
+
+  .section1 {
+    width: 100%;
+  }
+
+  .section2 {
+    width: 100%;
+    height: auto;
+    margin-bottom: 150px;
+  }
+
+  .footer-container {
+    height: 30vh;
+  }
+
+  .article1 {
+    height: auto;
+  }
+
+  .article2 {
+    height: auto;
+  }
+
+  .tail-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    }
+  .tech {
+    width: 40%;
+  }
+
+  .about {
+    width: 40%;
+  }
+}
+
+/* -------------------- END OF MEDIA QUERY -------------------- */
