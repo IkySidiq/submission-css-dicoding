@@ -1,4 +1,6 @@
+
 document.addEventListener('DOMContentLoaded', function() {
+  // DOM NAVBAR
   const navLinks = document.querySelectorAll(".nav li a");
   navLinks.forEach(item => {
     item.addEventListener("click", () => {
@@ -9,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     })
   })
 
+  // AUTOMATIC INTERVAL
   let counter = 1;
   let slideInterval;
   const radioButtons = document.querySelectorAll('input[name="radio-btn"]');
@@ -34,4 +37,28 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById("radio" + counter).checked = true;
   }
   autoCarousel();
-});
+
+  const hamburger = document.querySelector(".hamburger");
+  const navItem = document.querySelector(".nav");
+
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navItem.classList.toggle("active");
+  })
+
+  // RESPONSIF NAVBAR 576px
+  let lastScrollTop = 0;
+  const navbar = document.querySelector(".nav-container");
+
+  window.addEventListener("scroll", () => {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollTop > lastScrollTop) {
+      navbar.style.top = "-100px";
+      navItem.classList.remove("active");
+      hamburger.classList.remove("active");
+    } else {
+      navbar.style.top = "0";
+    }
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+  });
+  });
