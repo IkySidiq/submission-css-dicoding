@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function() {
   // DOM NAVBAR
   const navLinks = document.querySelectorAll(".nav li a");
